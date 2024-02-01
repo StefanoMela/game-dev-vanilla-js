@@ -1,6 +1,6 @@
 # Game Development with JavaScript
 
-My take on the freeCodeCamp.org](https://www.freecodecamp.org/news/learn-javascript-game-development-full-course/) game development with Vanilla JavaScript
+My take on the [freeCodeCamp.org](https://www.freecodecamp.org/news/learn-javascript-game-development-full-course/) course game development with Vanilla JavaScript
 
 This course is made out of 9 separate projects. In this series of projects you will learn everything you need to make your own 2D animated games, from sprite animation to state management.
 
