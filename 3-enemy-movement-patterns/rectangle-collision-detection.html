@@ -1,0 +1,47 @@
+<!-- 
+Rectangle collision detection:
+
+La prima e più semplice forma di collisione fra oggetti è quella fra due rettagoli allineati sull'asse ( = non rotati) 
+e compara le coordinate X e Y e altezza e larghezza dei rettangoli: 
+
+- se si sovrappongono avremo una collisione, se c'è un gap fra loro ovviamente non c'è collisone.
+
+ESEMPIO UNO:
+-->
+
+<script>
+    let rect1 = { x: 5, y: 5, width: 50, height: 50 }
+    let rect2 = { x: 20, y: 10, width: 10, height: 10 }
+
+    if (rect1.x < rect2.x + rect2.width && // controllo se l'angolo alto sx rect1 è meno dell'angolo dx alto di rect2 // più verso destra, meno verso sinistra
+        rect1.x + rect1.width > rect2.x && // controllo se angolo alto dx rect1 è a destra dell'angolo alto sx di rect2
+        rect1.y < rect2.y + rect2.height && // controllo se angolo alto sx rect1 è più in alto rispetto all'angolo sx basso di rect2
+        rect1.y + rect1.height > rect2.y) // controllo se angolo basso sx rect1 è più in basso rispetto all'angolo sx alto rect2
+    {
+        // collisione
+    } else {
+        // no collisione
+    }
+</script>
+
+
+<!-- 
+ESEMPIO DUE
+
+In questo esempio, che è leggermente più performante, cambiamo la logica e qualche condiziione nell'IF Statement:
+-->
+
+<script>
+    let rect3 = { x: 5, y: 5, width: 50, height: 50 }
+    let rect4 = { x: 20, y: 10, width: 10, height: 10 }
+
+    if (rect3.x > rect4.x + rect4.width || // Se almeno una di queste condizioni è vera, non potrà mai esserci condizione
+        rect3.x + rect3.width < rect4.x ||
+        rect3.y > rect4.y + rect4.height||
+        rect3.y + rect3.height < rect4.y )
+    {
+        // no collisione
+    } else {
+        // collisione
+    }
+</script>
